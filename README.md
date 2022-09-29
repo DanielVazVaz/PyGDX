@@ -6,8 +6,8 @@ Install the latest version of this repository to your machine following one of t
 
 - users with git:
 ```
-git clone https://github.com/DanielVazVaz/PySIS.git
-cd PySIS
+git clone https://github.com/DanielVazVaz/PyGDX.git
+cd PyGDX
 pip install -e .
 ```
 - users without git:
