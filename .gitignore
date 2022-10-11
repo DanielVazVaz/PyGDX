@@ -1,3 +1,5 @@
 Local
-pygdx/__pycache__
+__pycache__
 pygdx.egg-info
+venv
+docs/_build/
