@@ -32,14 +32,17 @@ class GDXFile:
         import gams
         self.gams_module = gams
         
-    def get_workspace(self):
+    def get_workspace(self) -> "GamsWorkspace":
         """Gets the workspace object
+        
+        Returns:
+            GamsWorkspace: Gams workspace object
         """       
         return self.gams_module.GamsWorkspace(system_directory = self.gams_path,
                                               working_directory = os.getcwd())
     def read_gdx(self):
         """Reads the GDX file. Creates the workspace, the database from a given gdx,
-        and creates the dataframes of sets, variabes and parameters.
+        and creates the dataframes of sets, variables and parameters.
         """
         self.ws = self.get_workspace()
         self.database = self.ws.add_database_from_gdx(self.gdx_path)
@@ -50,7 +53,7 @@ class GDXFile:
         gams objects. It also creates the dataframes for these three data structures.
 
         Args:
-            database (_type_): _description_
+            database (GamsDatabase): Gams database object
         """        
         self.sets       = {}
         self.parameters = {}
@@ -71,7 +74,7 @@ class GDXFile:
         for p in self.parameters:
             self.parameters_df[p] = self._parameter_to_df(self.parameters[p])
         for v in self.variables:
-            self.variables_df[v]  = self._variables_to_df(self.variables[v])
+            self.variables_df[v]  = self._variable_to_df(self.variables[v])
 
     def _set_to_df(self, set_object):
         """Transforms a gams set object into a 
@@ -117,7 +120,7 @@ class GDXFile:
         df["Value"] = [v.value for v in param_object]
         return df
     
-    def _variables_to_df(self, var_object):
+    def _variable_to_df(self, var_object):
         """Transforms a gams variable object into a 
         dataframe
 
