@@ -1,3 +1,5 @@
+**AS OF RECENTLY, GAMS HAS IMPLEMENTED A MUCH BETTER PYTHON API, SO THIS PACKAGE IS UNNCESARY FOR NEWER VERSIONS OF GAMS**
+
 # PyGDX
 
 [![Documentation Status](https://readthedocs.org/projects/pygdx-docs/badge/?version=latest)](https://pygdx-docs.readthedocs.io/en/latest/?badge=latest)
